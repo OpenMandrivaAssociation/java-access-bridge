@@ -1,3 +1,5 @@
+%define gcj_support 1
+
 Name:           java-access-bridge
 Version:        1.19.1
 Release:        %mkrel 0.0.1
