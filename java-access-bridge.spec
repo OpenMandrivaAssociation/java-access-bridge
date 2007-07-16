@@ -12,7 +12,7 @@ Source0:        http://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.19/j
 Source1:        http://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.19/java-access-bridge-1.19.1.md5sum
 Patch0:         %{name}-jar_dir.patch
 BuildRequires:  at-spi-devel
-BuildRequires:  java-1.7.0-icedtea
+BuildRequires:  java-1.7.0-icedtea-devel
 BuildRequires:  jpackage-utils
 BuildRequires:  libbonobo-devel
 %if %{gcj_support}
