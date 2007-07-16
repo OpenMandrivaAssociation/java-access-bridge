@@ -15,6 +15,7 @@ BuildRequires:  at-spi-devel
 BuildRequires:  java-1.7.0-icedtea-devel
 BuildRequires:  jpackage-utils
 BuildRequires:  libbonobo-devel
+BuildRequires:  xprop
 %if %{gcj_support}
 Requires(post): java-gcj-compat
 Requires(postun): java-gcj-compat
