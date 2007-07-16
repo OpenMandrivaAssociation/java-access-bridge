@@ -21,7 +21,6 @@ Requires(postun): java-gcj-compat
 BuildRequires:  java-gcj-compat-devel
 %else
 BuildArch:      noarch
-BuildRequires:  java-devel
 %endif
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
@@ -38,7 +37,7 @@ Provider Interface (at-spi).
 %build
 %{_bindir}/autoreconf -i -v -f
 %{configure2_5x} \
-        --with-java-home=%{_jvmdir}/java-1.7.0-icedtea
+        --with-java-home=%{_jvmdir}/java-icedtea
 %{make}
 
 %install
