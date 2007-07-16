@@ -44,6 +44,9 @@ Provider Interface (at-spi).
 %install
 %{__rm} -rf %{buildroot}
 %{makeinstall_std}
+(cd %{buildroot}%{_javadir} && %{__mv} JNav.jar jnav.jar && %{__ln_s} jnav.jar JNav.jar)
+(cd %{buildroot}%{_javadir} && for jar in *.jar; do %{__mv} ${jar} `/bin/basename ${jar} .jar`-%{version}.jar; done)
+(cd %{buildroot}%{_javadir} && for jar in *-%{version}*.jar; do %{__ln_s} ${jar} `/bin/echo ${jar} | %{__sed}  "s|-%{version}||g"`; done)
 
 %if %{gcj_support}
 %{_bindir}/aot-compile-rpm
