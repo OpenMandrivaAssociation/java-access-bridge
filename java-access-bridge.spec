@@ -2,7 +2,7 @@
 
 Name:           java-access-bridge
 Version:        1.19.2
-Release:        %mkrel 0.0.1
+Release:        %mkrel 0.0.2
 Epoch:          0
 Summary:        Assistive technology for Java Swing applications
 License:        GPL
@@ -17,8 +17,6 @@ BuildRequires:  jpackage-utils
 BuildRequires:  libbonobo-devel
 BuildRequires:  xprop
 %if %{gcj_support}
-Requires(post): java-gcj-compat
-Requires(postun): java-gcj-compat
 BuildRequires:  java-gcj-compat-devel
 %else
 BuildArch:      noarch
