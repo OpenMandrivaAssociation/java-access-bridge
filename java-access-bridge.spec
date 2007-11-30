@@ -1,7 +1,7 @@
 %define gcj_support 1
 
 Name:           java-access-bridge
-Version:        1.20.0
+Version:        1.20.2
 Release:        %mkrel 0.0.1
 Epoch:          0
 Summary:        Assistive technology for Java Swing applications
@@ -35,8 +35,7 @@ Provider Interface (at-spi).
 
 %build
 %{_bindir}/autoreconf -i -v -f
-%{configure2_5x} \
-        --with-java-home=%{_jvmdir}/java-icedtea
+%{configure2_5x} --with-java-home=%{_jvmdir}/java-icedtea
 %{make}
 
 %install
