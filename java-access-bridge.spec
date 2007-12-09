@@ -2,7 +2,7 @@
 
 Name:           java-access-bridge
 Version:        1.21.1
-Release:        %mkrel 0.0.1
+Release:        %mkrel 0.0.2
 Epoch:          0
 Summary:        Assistive technology for Java Swing applications
 License:        GPL
