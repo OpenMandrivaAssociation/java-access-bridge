@@ -14,7 +14,7 @@ Patch0:         %{name}-jar_dir.patch
 BuildRequires:  at-spi-devel
 BuildRequires:  java-1.7.0-icedtea-devel
 BuildRequires:  java-rpmbuild
-BuildRequires:  bonobo-devel
+BuildRequires:  libbonobo2_x-devel
 BuildRequires:  xprop
 %if %{gcj_support}
 BuildRequires:  java-gcj-compat-devel
