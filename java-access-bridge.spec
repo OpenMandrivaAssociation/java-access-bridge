@@ -11,7 +11,7 @@ URL:            http://www.gnome.org/
 Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.21/java-access-bridge-%{version}.tar.bz2
 Source1:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.21/java-access-bridge-%{version}.md5sum
 Patch0:         %{name}-jar_dir.patch
-BuildRequires:  at-spi-devel
+BuildRequires:  libat-spi-devel
 BuildRequires:  java-1.7.0-icedtea-devel
 BuildRequires:  java-rpmbuild
 BuildRequires:  libbonobo2_0-devel
