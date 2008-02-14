@@ -7,6 +7,7 @@ Epoch:          0
 Summary:        Assistive technology for Java Swing applications
 License:        GPL
 Group:          Development/Java
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:            http://www.gnome.org/
 Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.21/java-access-bridge-%{version}.tar.bz2
 Source1:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.21/java-access-bridge-%{version}.md5sum
