@@ -1,4 +1,4 @@
-%define gcj_support 1
+%define gcj_support 0
 
 Name:           java-access-bridge
 Version:        1.22.0
@@ -13,7 +13,7 @@ Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.22/ja
 Source1:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.22/java-access-bridge-%{version}.md5sum
 Patch0:         %{name}-jar_dir.patch
 BuildRequires:  at-spi-devel
-BuildRequires:  java-1.7.0-icedtea-devel
+BuildRequires:  java-1.6.0-openjdk-devel
 BuildRequires:  java-rpmbuild
 BuildRequires:  libbonobo2_x-devel
 BuildRequires:  xprop
@@ -35,7 +35,7 @@ Provider Interface (at-spi).
 
 %build
 %{_bindir}/autoreconf -i -v -f
-%{configure2_5x} --with-java-home=%{_jvmdir}/java-icedtea
+%{configure2_5x} --with-java-home=%{_jvmdir}/java-openjdk
 %{make}
 
 %install
