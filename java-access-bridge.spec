@@ -1,16 +1,15 @@
 %define gcj_support 0
 
 Name:           java-access-bridge
-Version:        1.22.0
-Release:        %mkrel 0.0.1
+Version:        1.22.2
+Release:        %mkrel 1
 Epoch:          0
 Summary:        Assistive technology for Java Swing applications
-License:        GPL
+License:        LGPLv2+
 Group:          Development/Java
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:            http://www.gnome.org/
 Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.22/java-access-bridge-%{version}.tar.bz2
-Source1:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.22/java-access-bridge-%{version}.md5sum
 Patch0:         %{name}-jar_dir.patch
 BuildRequires:  at-spi-devel
 BuildRequires:  java-1.6.0-openjdk-devel
