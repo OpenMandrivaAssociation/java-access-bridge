@@ -2,7 +2,7 @@
 
 Name:           java-access-bridge
 Version:        1.23.0
-Release:        %mkrel 1
+Release:        %mkrel 2
 Epoch:          0
 Summary:        Assistive technology for Java Swing applications
 License:        LGPLv2+
@@ -11,6 +11,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:            http://www.gnome.org/
 Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.22/java-access-bridge-%{version}.tar.bz2
 Patch0:         %{name}-jar_dir.patch
+Patch1:         java-1.6.0-openjdk-java-access-bridge-tck.patch
 BuildRequires:  at-spi-devel
 BuildRequires:  java-1.6.0-openjdk-devel
 BuildRequires:  java-rpmbuild
@@ -31,6 +32,7 @@ Provider Interface (at-spi).
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{_bindir}/autoreconf -i -v -f
