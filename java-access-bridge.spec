@@ -1,8 +1,8 @@
 %define gcj_support 0
 
 Name:           java-access-bridge
-Version:        1.23.0
-Release:        %mkrel 2
+Version:        1.24.0
+Release:        %mkrel 1
 Epoch:          0
 Summary:        Assistive technology for Java Swing applications
 License:        LGPLv2+
