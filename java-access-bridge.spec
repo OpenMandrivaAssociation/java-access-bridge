@@ -37,7 +37,8 @@ Provider Interface (at-spi).
 %build
 %{_bindir}/autoreconf -i -v -f
 %{configure2_5x} --with-java-home=%{_jvmdir}/java-openjdk
-%{make}
+#gw disable parallel make in 1.24.0 to prevent OOM errors
+make
 
 %install
 %{__rm} -rf %{buildroot}
