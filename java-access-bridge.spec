@@ -2,16 +2,17 @@
 
 Name:           java-access-bridge
 Version:        1.24.0
-Release:        %mkrel 1
+Release:        %mkrel 1.0.1
 Epoch:          0
 Summary:        Assistive technology for Java Swing applications
 License:        LGPLv2+
 Group:          Development/Java
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:            http://www.gnome.org/
-Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.22/java-access-bridge-%{version}.tar.bz2
+Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.24/java-access-bridge-%{version}.tar.bz2
 Patch0:         %{name}-jar_dir.patch
 Patch1:         java-1.6.0-openjdk-java-access-bridge-tck.patch
+Patch2:         java-1.6.0-openjdk-java-access-bridge-idlj.patch
 BuildRequires:  at-spi-devel
 BuildRequires:  java-1.6.0-openjdk-devel
 BuildRequires:  java-rpmbuild
@@ -33,9 +34,10 @@ Provider Interface (at-spi).
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%{_bindir}/autoreconf -i -v -f
 
 %build
-%{_bindir}/autoreconf -i -v -f
 %{configure2_5x} --with-java-home=%{_jvmdir}/java-openjdk
 #gw disable parallel make in 1.24.0 to prevent OOM errors
 make
