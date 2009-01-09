@@ -1,15 +1,15 @@
 %define gcj_support 0
 
 Name:           java-access-bridge
-Version:        1.24.0
-Release:        %mkrel 1.0.1
+Version:        1.25.0
+Release:        %mkrel 1
 Epoch:          0
 Summary:        Assistive technology for Java Swing applications
 License:        LGPLv2+
 Group:          Development/Java
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:            http://www.gnome.org/
-Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/java-access-bridge/1.24/java-access-bridge-%{version}.tar.bz2
+Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/%name/java-access-bridge-%{version}.tar.bz2
 Patch0:         %{name}-jar_dir.patch
 Patch1:         java-1.6.0-openjdk-java-access-bridge-tck.patch
 Patch2:         java-1.6.0-openjdk-java-access-bridge-idlj.patch
@@ -20,8 +20,6 @@ BuildRequires:  libbonobo2_x-devel
 BuildRequires:  xprop
 %if %{gcj_support}
 BuildRequires:  java-gcj-compat-devel
-%else
-BuildArch:      noarch
 %endif
 
 %description
@@ -32,13 +30,13 @@ Provider Interface (at-spi).
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch0 -p1 -b .jar_dir
+%patch1 -p1 -b .tck
 %patch2 -p1
 %{_bindir}/autoreconf -i -v -f
 
 %build
-%{configure2_5x} --with-java-home=%{_jvmdir}/java-openjdk
+%configure2_5x --with-java-home=%{_jvmdir}/java-openjdk
 #gw disable parallel make in 1.24.0 to prevent OOM errors
 make
 
@@ -48,6 +46,8 @@ make
 (cd %{buildroot}%{_javadir} && %{__mv} JNav.jar jnav.jar && %{__ln_s} jnav.jar JNav.jar)
 (cd %{buildroot}%{_javadir} && for jar in *.jar; do %{__mv} ${jar} `/bin/basename ${jar} .jar`-%{version}.jar; done)
 (cd %{buildroot}%{_javadir} && for jar in *-%{version}*.jar; do %{__ln_s} ${jar} `/bin/echo ${jar} | %{__sed}  "s|-%{version}||g"`; done)
+
+rm -f %buildroot%_libdir/*.a
 
 %if %{gcj_support}
 %{_bindir}/aot-compile-rpm
@@ -67,6 +67,7 @@ make
 %files
 %defattr(0644,root,root,0755)
 %doc AUTHORS ChangeLog NEWS README TODO
+%_libdir/libjava-access-bridge-jni.*
 %{_javadir}/*
 %{_javadir}/*
 %if %{gcj_support}
