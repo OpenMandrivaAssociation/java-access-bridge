@@ -1,0 +1,25 @@
+diff -p -up java-access-bridge-1.26.2/bridge/org/GNOME/Accessibility/JavaBridge.java.tck java-access-bridge-1.26.2/bridge/org/GNOME/Accessibility/JavaBridge.java
+--- java-access-bridge-1.26.2/bridge/org/GNOME/Accessibility/JavaBridge.java.tck	2009-06-09 11:54:46.000000000 +0200
++++ java-access-bridge-1.26.2/bridge/org/GNOME/Accessibility/JavaBridge.java	2009-06-09 12:46:38.000000000 +0200
+@@ -34,6 +34,8 @@ import javax.accessibility.AccessibleCon
+ import javax.accessibility.AccessibleRole;
+ import javax.accessibility.AccessibleText;
+ import javax.accessibility.AccessibleEditableText;
++import java.security.PrivilegedAction;
++import java.security.AccessController;
+ 
+ public class JavaBridge {
+ 
+@@ -389,7 +391,11 @@ public class JavaBridge {
+ 			System.err.println ("Java Accessibility Bridge for GNOME loaded.\n");
+ 
+ 		// Not sure what kind of arguments should be sent to ORB
+-		String vm_rev = System.getProperty("java.version");
++		String vm_rev = (String) AccessController.doPrivileged(new PrivilegedAction() {
++			public java.lang.Object run() {
++			    return System.getProperty("java.version");
++			}
++		});
+ 
+ 		if (vm_rev.compareTo("1.4.0") < 0) {
+ 			System.err.println("WARNING: Java Accessibility Bridge " +
