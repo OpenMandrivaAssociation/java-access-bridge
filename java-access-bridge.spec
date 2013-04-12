@@ -16,7 +16,7 @@
 
 Name:		java-access-bridge
 Version:	1.26.2
-Release:	8
+Release:	9
 Epoch:		0
 Summary:	Assistive technology for Java Swing applications
 License:	LGPLv2+
