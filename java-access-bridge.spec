@@ -23,6 +23,7 @@ License:	LGPLv2+
 Group:		Development/Java
 URL:		http://www.gnome.org/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%name/java-access-bridge-%{version}.tar.bz2
+Source100:	java-access-bridge.rpmlintrc
 Patch0:		%{name}-jar_dir.patch
 Patch1:		java-1.6.0-openjdk-java-access-bridge-tck.patch
 Patch2:		java-1.6.0-openjdk-java-access-bridge-idlj.patch
