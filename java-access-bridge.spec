@@ -37,6 +37,8 @@ BuildRequires:	pkgconfig(libspi-1.0)
 BuildRequires:	java-gcj-compat-devel
 %endif
 
+Requires: java-openjdk
+
 %description
 This package contains the Java Access Bridge for GNOME, which connects
 the built-in accessibility support in Java Swing apps to the GNOME
