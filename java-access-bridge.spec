@@ -17,7 +17,7 @@
 Summary:	Assistive technology for Java Swing applications
 Name:		java-access-bridge
 Version:	1.26.2
-Release:	13
+Release:	14
 License:	LGPLv2+
 Group:		Development/Java
 Url:		http://www.gnome.org/
