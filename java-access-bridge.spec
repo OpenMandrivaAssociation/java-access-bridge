@@ -47,7 +47,7 @@ Provider Interface (at-spi).
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 autoreconf -ivf
 
 %build
