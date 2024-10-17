@@ -20,7 +20,7 @@ Version:	1.26.2
 Release:	16
 License:	LGPLv2+
 Group:		Development/Java
-Url:		http://www.gnome.org/
+Url:		https://www.gnome.org/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%name/java-access-bridge-%{version}.tar.bz2
 Source100:	java-access-bridge.rpmlintrc
 Patch0:		%{name}-jar_dir.patch
